@@ -26,7 +26,8 @@ var AirbnbClient = function(optionalConfigs) {
   return {
     configs: optionalConfigs,
     search: search,
-    getInfo: getInfo,
+    getInfo: getInfo.getInfo,
+    getHistoricalData: getInfo.getHistoricalData,
     getCalendar: getCalendar,
     getReviews: getReviews,
     getEstIncome: getEstIncome,

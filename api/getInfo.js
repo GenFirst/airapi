@@ -46,4 +46,7 @@ function getHistoricalData() {
   });
 }
 
-module.exports = getInfo;
+module.exports = {
+  getInfo,
+  getHistoricalData
+};
