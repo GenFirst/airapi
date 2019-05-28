@@ -29,4 +29,21 @@ function getInfo(hostingId) {
   });
 }
 
+function getHistoricalData() {
+  var requestConfigs = _.assign({}, configs.DEFAULT_REQUEST_CONFIGS, {
+    url: configs.AIRBNB_PREFIX + '/api/' + '/v2/get_host_performance_table_data';
+  });
+
+  return new Promise(function(resolve, reject) {
+    // Make request to parse hosting info
+    request(requestConfigs, function(err, res, body) {
+      if (!err && res.statusCode == 200) {
+        resolve(JSON.parse(body));
+      } else if (err) {
+        reject(err);
+      }
+    });
+  });
+}
+
 module.exports = getInfo;

@@ -10,15 +10,15 @@
  * - getReviews() - Get reviews for a given user, as host or guest
  */
 
-var search = require('./api/search'),
-    getInfo = require('./api/getInfo'),
-    getCalendar = require('./api/getCalendar'),
-    getReviews = require('./api/getReviews'),
-    getEstIncome = require('./api/getEstIncome'),
-    login = require('./api/login');
+var search = require("./api/search"),
+  getInfo = require("./api/getInfo"),
+  getCalendar = require("./api/getCalendar"),
+  getReviews = require("./api/getReviews"),
+  getEstIncome = require("./api/getEstIncome"),
+  login = require("./api/login");
 
-var USERNAME = 'username',
-    PASSWORD = 'password';
+var USERNAME = "username",
+  PASSWORD = "password";
 
 var AirbnbClient = function(optionalConfigs) {
   optionalConfigs = optionalConfigs || {};
