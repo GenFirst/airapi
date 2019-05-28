@@ -1,9 +1,8 @@
-var request = require('request'),
-  _ = require('lodash'),
-  configs = require('../configs/configs'),
-  serialize = require('../helpers/serialize'),
-  Promise = require('bluebird');
-
+var request = require("request"),
+  _ = require("lodash"),
+  configs = require("../configs/configs"),
+  serialize = require("../helpers/serialize"),
+  Promise = require("bluebird");
 
 /**
  * Get info for a particular hosting
@@ -14,7 +13,12 @@ var request = require('request'),
  */
 function getInfo(hostingId) {
   var requestConfigs = _.assign({}, configs.DEFAULT_REQUEST_CONFIGS, {
-    url: configs.HOSTING_INFO_URL + '/' + hostingId + '?' + serialize(configs.DEFAULT_REQUEST_PARAMS)
+    url:
+      configs.HOSTING_INFO_URL +
+      "/" +
+      hostingId +
+      "?" +
+      serialize(configs.DEFAULT_REQUEST_PARAMS)
   });
 
   return new Promise(function(resolve, reject) {
@@ -31,7 +35,7 @@ function getInfo(hostingId) {
 
 function getHistoricalData() {
   var requestConfigs = _.assign({}, configs.DEFAULT_REQUEST_CONFIGS, {
-    url: configs.AIRBNB_PREFIX + '/api/' + '/v2/get_host_performance_table_data';
+    url: configs.AIRBNB_PREFIX + "/api/" + "/v2/get_host_performance_table_data"
   });
 
   return new Promise(function(resolve, reject) {
