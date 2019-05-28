@@ -35,7 +35,12 @@ function getInfo(hostingId) {
 
 function getHistoricalData() {
   var requestConfigs = _.assign({}, configs.DEFAULT_REQUEST_CONFIGS, {
-    url: configs.AIRBNB_PREFIX + "/api/" + "/v2/get_host_performance_table_data"
+    url:
+      configs.AIRBNB_PREFIX +
+      "/api/" +
+      "/v2/get_host_performance_table_data" +
+      "?" +
+      serialize(configs.DEFAULT_REQUEST_PARAMS)
   });
 
   return new Promise(function(resolve, reject) {
